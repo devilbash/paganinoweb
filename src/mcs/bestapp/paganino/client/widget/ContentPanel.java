@@ -28,7 +28,6 @@ public class ContentPanel extends ResizeComposite
 
 	interface ContentPanelBinder extends UiBinder<Widget, ContentPanel> {
 	}
-
 	private static UiBinder<Widget, ContentPanel> binder = GWT
 			.create(ContentPanelBinder.class);
 
@@ -39,15 +38,13 @@ public class ContentPanel extends ResizeComposite
 		initWidget(binder.createAndBindUi(this));
         EventBus.get().addHandler(MenuEvent.TYPE, this);
    	}
-
 	public void addTab(String text, Composite content) {
 		ClosePanel closePanel = new ClosePanel();
 		closePanel.setText(text);
 		closePanel.addCloseHandler(this);
 		tab.add(content,closePanel);
 		tab.selectTab(tab.getWidgetCount() - 1);
-	}
-	
+	}	
 	@Override
     public void onMenuSelection(MenuEvent menuEvent) {
             String contentName = menuEvent.getMenu();

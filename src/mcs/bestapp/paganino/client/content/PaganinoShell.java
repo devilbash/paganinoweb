@@ -36,10 +36,6 @@ public class PaganinoShell extends ResizeComposite  implements StatusHandler{
 	public PaganinoShell() {
 		initWidget(binder.createAndBindUi(this));
 
-		if (!GWT.isProdMode()) {
-			contentPanel.addTab("Log", new LogTab());
-		}
-
 		contentPanel.addTab("Home", new DateBox());
 
         EventBus.get().addHandler(StatusEvent.TYPE, this);

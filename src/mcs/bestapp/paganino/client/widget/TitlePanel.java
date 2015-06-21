@@ -14,9 +14,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class TitlePanel extends Composite implements NameHandler {
 
-	private static final Logger log = Logger.getLogger(TitlePanel.class
-			.getName());
-
 	interface SimpleLabelBinder extends UiBinder<Widget, TitlePanel> {
 	}
 
@@ -33,7 +30,6 @@ public class TitlePanel extends Composite implements NameHandler {
 
 	@Override
 	public void onNameChange(NameEvent nameEvent) {
-		log.fine("NameEvent " + nameEvent.getName());
 		label.setText(nameEvent.getName());
 	}
 }
